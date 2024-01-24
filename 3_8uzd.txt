@@ -1,0 +1,31 @@
+using System;
+
+class HelloWorld
+{ 
+  static void Main()
+  { 
+    Random rnd = new Random();  // create random variable
+    int randomNumber = rnd.Next(1, 11);     // pick random number from 1 to 10 including
+
+    Console.WriteLine("Es minēju skaitli no 1 līdz 10. Mēģiniet uzminēt!"); 
+    Console.WriteLine("Ievadiet skaitli: "); 
+    int userNumber = Convert.ToInt32(Console.ReadLine()); 
+
+    while (userNumber != randomNumber) 
+    { 
+        if (userNumber < randomNumber) 
+        {
+            Console.WriteLine("Nav pareizi atminēts! Mans skaitlis ir lielāks."); 
+            Console.WriteLine("Ievadiet skaitli vēlreiz: "); 
+            userNumber = Convert.ToInt32(Console.ReadLine()); 
+        } 
+        else 
+        { 
+            Console.WriteLine("Nav pareizi atminēts! Mans skaitlis ir mazāks."); 
+            Console.WriteLine("Ievadiet skaitli vēlreiz: "); 
+            userNumber = Convert.ToInt32(Console.ReadLine()); 
+        } 
+    } 
+    Console.WriteLine("Jūs uzminējāt manu skaitli!"); 
+  } 
+}

@@ -1,0 +1,19 @@
+using System;
+
+public class HelloWorld 
+{
+    public static void Main(string[] args) 
+    { 
+        int people = 12; 
+        string weather = "bad";  
+
+        if (people <= 10 && weather == "nice") 
+        { 
+            Console.WriteLine("SaladMad!"); 
+        }  
+        else 
+        { 
+            Console.WriteLine("Soup N Sandwich!"); 
+        } 
+    } 
+} 

@@ -1,0 +1,12 @@
+using System; 
+public class uzdevumi 
+{ 
+    public static void Main(string[] args) 
+    { 
+        int numberOne = 12932; 
+        int numberTwo = -2828472; 
+
+        double mazakaisSkaitlis = Math.Min(Math.Sqrt(numberOne), Math.Sqrt(Math.Abs(numberTwo))); 
+        Console.WriteLine($"Mazaka vertiba: {mazakaisSkaitlis}"); 
+    } 
+} 

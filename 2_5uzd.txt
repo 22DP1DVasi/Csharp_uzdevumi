@@ -1,0 +1,24 @@
+2.5. 
+
+using System; 
+namespace uzdevumi 
+{ 
+  class Program 
+  { 
+      public static void Main(string[] args) 
+      { 
+        Console.WriteLine("Ievadiet Jūsu vecumu: "); 
+        int userAge = Convert.ToInt32(Console.ReadLine());  // lietotāja vecums 
+        double jupiterYears = 11.86; 
+
+        double jupiterAge = userAge / jupiterYears;  // lietotāja vecums Jupiterā 
+        int journeyToJupiter = 9; 
+        int newEarthAge = userAge + journeyToJupiter;   // kad sasniedzat Jupiteru 
+        double newJupiterAge = newEarthAge / jupiterYears;  // jauns vecums Jupiterā 
+
+        Console.WriteLine($"Jūsu pašreizējais vecums Jupiterā ir {jupiterAge}");                 
+        Console.WriteLine($"Jūsu vecums pēc brauciena uz Jupiteru Zemes gados ir {newEarthAge}"); 
+        Console.WriteLine($"Jūsu vecums Jupiterā pēc brauciena ir {newJupiterAge}"); 
+      } 
+  } 
+} 

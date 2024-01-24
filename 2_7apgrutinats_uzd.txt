@@ -1,0 +1,55 @@
+using System; 
+
+public class HelloWorld 
+{ 
+    static bool checkProperInt (string valueToCheck)    // method to check if variable is convertable to int 
+    { 
+        int correctValue; 
+        if (int.TryParse(valueToCheck, out correctValue) == false) //if it is impossible to convert input to int 
+        { 
+            return false; 
+        } else if (Convert.ToInt32(valueToCheck) < 0)   // if converted value is < 0 
+        { 
+            return false; 
+        } 
+
+        return true; 
+    } 
+
+    public static void Main(string[] args) 
+    { 
+        Console.WriteLine("Ievadiet studentu skaitu:"); 
+        string students = Console.ReadLine(); 
+        while (checkProperInt(students) == false) 
+        { 
+            Console.WriteLine("Jus nepareizi ievadijat vertibu! Meginiet velreiz."); 
+            Console.WriteLine("Ievadiet studentu skaitu:"); 
+            students = Console.ReadLine(); 
+        }
+        int studentsInt = Convert.ToInt32(students); 
+        Console.WriteLine(""); 
+
+        Console.WriteLine("Ievadiet studentu skaitu vienai grupai:"); 
+        string groupSize = Console.ReadLine(); 
+        while (checkProperInt(groupSize) == false) 
+        { 
+            Console.WriteLine("Jus nepareizi ievadijat vertibu! Meginiet velreiz."); 
+            Console.WriteLine("Ievadiet studentu skaitu vienai grupai:"); 
+            groupSize = Console.ReadLine(); 
+        } 
+        int groupSizeInt = Convert.ToInt32(groupSize); 
+
+        if (groupSizeInt == 0) 
+        { 
+            Console.WriteLine("Grupas izmers ir 0. Studentiem nav kur iet!"); 
+        } else if (studentsInt / groupSizeInt < 1) 
+        { 
+             Console.WriteLine("Grupas izmers ir lielaks neka studentu skaits. Neviena grupa nav aizpildita!"); 
+        } else 
+        { 
+             ...
+        } 
+
+    } 
+
+} 

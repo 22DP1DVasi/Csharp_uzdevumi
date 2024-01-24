@@ -1,0 +1,19 @@
+using System; 
+
+public class HelloWorld 
+{ 
+    public static void Main(string[] args) 
+    {
+        double numberOne = 6.5; 
+        double numberTwo = 4; 
+
+        double pakapesRezult = Math.Pow(numberOne, numberTwo); 
+        Console.WriteLine($"{numberOne} ^ {numberTwo}: {pakapesRezult}"); 
+
+        double noapaloUzAugsu = Math.Ceiling(numberOne); 
+        Console.WriteLine($"{numberOne} noapalosanas uz augsu rezultats: {noapaloUzAugsu}"); 
+
+        Console.Write($"Lielakais skaitlis no {numberOne} un {numberTwo}: "); 
+        Console.WriteLine(Math.Max(numberOne, numberTwo)); 
+    } 
+} 

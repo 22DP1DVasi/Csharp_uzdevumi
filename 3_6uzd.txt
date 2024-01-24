@@ -1,0 +1,33 @@
+using System;  
+
+public class HelloWorld  
+{ 
+    public static void Main(string[] args)  
+    {  
+        Console.WriteLine("Ievadiet filmu zanru: ");  
+        string genre = Console.ReadLine();  
+        genre = genre.ToLower();  
+
+        switch(genre)  
+        {  
+            case "drama":  
+                Console.WriteLine("Citizien Kane");  
+                break;  
+            case "comedy":  
+                Console.WriteLine("Duck Soup");  
+                break;  
+            case "adventure":  
+                Console.WriteLine("King Kong");  
+                break;  
+            case "horror":  
+                Console.WriteLine("Psycho");  
+                break;  
+            case "science fiction":  
+                Console.WriteLine("2001: A Space Odyssey");  
+                break;  
+            default:  
+                Console.WriteLine("No movie found!");  
+                break;  
+        }  
+    }  
+} 

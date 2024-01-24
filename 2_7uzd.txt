@@ -1,0 +1,25 @@
+using System; 
+
+namespace uzdevumi 
+{ 
+  class uzd2_7 
+  {
+    public static void Main(string[] args) 
+    { 
+      int students = 18; 
+      int groupSize = 3; 
+
+      int atlikums = students % groupSize; 
+      Console.WriteLine($"Atlikums, dalot studentus ar {groupSize}: {atlikums}"); 
+      groupSize++; 
+
+      atlikums = students % groupSize; 
+      Console.WriteLine($"Atlikums, dalot studentus ar {groupSize}: {atlikums}"); 
+      groupSize++; 
+
+      atlikums = students % groupSize; 
+      Console.WriteLine($"Atlikums, dalot studentus ar {groupSize}: {atlikums}"); 
+    } 
+  } 
+ 
+} 
