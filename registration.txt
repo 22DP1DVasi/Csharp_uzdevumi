@@ -1,0 +1,6 @@
+Reģistrācija.
+Iespējas: ielogoties; reģistrēties.
+Ja lietotājs nav reģistrēts, nav iespējams ielogoties.
+Reģistrētam kontam jābūt user ID un parole.
+Parole: tikai mazie burti, lielie burti vai cipari. Jābūt kaut vienam lielam burtam.
+Ja parole tika uzrakstīts nepareizi 3 reizes - jābloķē konts.
