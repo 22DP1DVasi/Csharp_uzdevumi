@@ -13,34 +13,72 @@ class Registration
     string username;
     string password;
     
-    public
+    public Registration(usName, passWord)
+    {
+        this.username = usName;
+        this.password = passWord;
+    }
     
-  static void Main(string[] args)
+    public string GetUsername()
+    {
+        return this.username;
+    }
+    
+    public string GetPassword()
+    {
+        return this.password;
+    }
+    
+  public void Main(string[] args)
   {
-    ArrayList arlist = new ArrayList();
+    ArrayList accArList = new ArrayList();
+    bool signUpUsernameCheck = false;   // bool variable to check if username already exists for case sign up
     
-    Console.WriteLine("Hello! Please log on if you already have an account, or log in to create one!");
+    Console.WriteLine("Hello! Please log in if You already have an account, or sign up to create one!");
     
-    
-    Console.WriteLine("Enter \"log on\" or \"log in\". Or enter \"exit\" to stop the program.");
+    Console.WriteLine("Enter \"sign up\" or \"log in\". Or enter \"exit\" to stop the program.");
     string userCommand = Console.ReadLine();
     
     switch(userCommand)
     {
-        case "log on":
-            ...
+        case "sign up":
+            Console.WriteLine("Enter Your username: ");
+            string mUserName = Console.ReadLine();
+            bool isOriginalUsername = false;
+            while (signUpUsernameCheck == false)
+            {
+                foreach (Registration accounts in accArList)    // loop through arrayList
+                {
+                    if (mUserName == accounts.GetUsername())    // if this username already exists
+                    {
+                        Console.WriteLine("Account with this username already exists! Enter different username.");
+                        mUserName = Console.ReadLine();
+                        break;
+                    }
+                }
+            }
+                
+            Console.WriteLine("Enter password for Your new account.");
+            string mPassword = Console.ReadLine();
+            Registration newAccount = new Registration(mUserName, mPassword);
             break;
         
         case "log in":
-            ...
+            Console.WriteLine("Enter your username: ");
+            string tempUsername = Console.ReadLine();
+            foreach (Registration accounts in accArList)
+            {
+                if ()
+            }
             break;
         
         default:
-            
+            ...
             break;
     }
   }
 }
 
 // about ArrayLists: https://www.tutorialsteacher.com/csharp/csharp-arraylist
+
 
