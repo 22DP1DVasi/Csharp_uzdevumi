@@ -1,0 +1,14 @@
+using System;
+class HelloWorld {
+  static void Main() {
+    int emails = 20;
+    
+    for (; emails >= 0; emails--)
+    {
+        Console.WriteLine($"one email deleted, {emails} left");
+    }
+    
+    Console.WriteLine("ZERO EMAILS!");
+    
+  }
+}
