@@ -1,0 +1,57 @@
+using System;
+class HelloWorld {
+  static bool checkProperInt (string valueToCheck)    // method to check if variable is convertable to int 
+    { 
+        int correctValue; 
+        if (int.TryParse(valueToCheck, out correctValue) == false) //if it is impossible to convert input to int 
+        { 
+            return false; 
+        }
+        return true; 
+    }
+    
+    
+  static void Main() {
+    Console.WriteLine("Enter first natural number.");
+    string A = Console.ReadLine();
+    
+    while (checkProperInt(A) == false) 
+        { 
+            Console.WriteLine("You entered the value incorrectly! Try again."); 
+            Console.WriteLine("Enter first natural number."); 
+            A = Console.ReadLine(); 
+        }
+    int AInt = Convert.ToInt32(A);
+    Console.WriteLine("");
+    
+    Console.WriteLine("Enter second natural number.");
+    string B = Console.ReadLine();
+    
+    while (checkProperInt(B) == false) 
+        { 
+            Console.WriteLine("You entered the value incorrectly! Try again."); 
+            Console.WriteLine("Enter second natural number."); 
+            B = Console.ReadLine(); 
+        }
+    int BInt = Convert.ToInt32(B);
+    Console.WriteLine("");
+    
+    if (BInt > AInt)
+    {
+        int cTemp = AInt;
+        AInt = BInt;
+        BInt = cTemp;
+    }
+    
+    int counter = 0;
+    for (int i = AInt; i < BInt; i++)
+    {
+        if (i % 10 == 3)
+        {
+            counter++;
+        }
+    }
+    
+    Console.WriteLine(counter);
+  }
+}
