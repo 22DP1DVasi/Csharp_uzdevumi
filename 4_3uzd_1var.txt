@@ -1,6 +1,6 @@
 using System;
+
 class HelloWorld {
-    
   static bool checkProperInt (string valueToCheck)    // method to check if variable is convertable to int 
     { 
         int correctValue; 
@@ -25,8 +25,18 @@ class HelloWorld {
             Console.WriteLine("Enter a natural number that is at least 100."); 
             number = Console.ReadLine(); 
         }
-        int numberInt = Convert.ToInt32(number); 
-        Console.WriteLine(""); 
-    
+        int numberInt = Convert.ToInt32(number);
+        Console.WriteLine("");
+        
+        int digitsSum = 0;
+        int digit = 0;
+        while (numberInt > 0)
+        {
+            digit = numberInt % 10;
+            digitsSum += digit;
+            numberInt = numberInt / 10;
+        }
+        
+        Console.WriteLine($"Digits sum: {digitsSum}");
   }
 }
