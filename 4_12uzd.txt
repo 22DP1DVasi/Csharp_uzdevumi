@@ -1,0 +1,37 @@
+using System;
+class HelloWorld {
+  static bool checkProperInt (string valueToCheck)    // method to check if variable is convertable to int 
+    { 
+        int correctValue; 
+        if (int.TryParse(valueToCheck, out correctValue) == false) //if it is impossible to convert input to int 
+        { 
+            return false; 
+        }
+        return true; 
+    }
+    
+    
+  static void Main() {
+    Console.WriteLine("Input upto the table number starting from 1:");
+    string n = Console.ReadLine();
+    
+    while (checkProperInt(n) == false) 
+        { 
+            Console.WriteLine("You entered the value incorrectly! Try again."); 
+            Console.WriteLine("Input upto the table number starting from 1:"); 
+            n = Console.ReadLine(); 
+        }
+    int nInt = Convert.ToInt32(n);
+    Console.WriteLine("");
+    
+    Console.WriteLine("Multiplication table from 1 to 5");
+    for (int i = 1; i < 11; i++)
+    {
+        for (int j = 1; j < nInt + 1; j++)
+        {
+            Console.Write($"{j}x{i} = " + j * i + ", ");
+        }
+        Console.WriteLine("");
+    }
+  }
+}

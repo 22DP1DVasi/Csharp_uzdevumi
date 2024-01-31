@@ -1,0 +1,17 @@
+using System;
+class HelloWorld {
+  static void Main() {
+    int laiks = 4;
+    int attalumsLidzMajas = 300;
+    int atrums = 90;
+    
+    if (atrums * laiks >= attalumsLidzMajas)
+    {
+        Console.WriteLine("TRUE");
+    }
+    else
+    {
+        Console.WriteLine("FALSE");
+    }
+  }
+}
