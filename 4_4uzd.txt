@@ -36,7 +36,7 @@ class HelloWorld {
     int BInt = Convert.ToInt32(B);
     Console.WriteLine("");
     
-    if (BInt > AInt)
+    if (BInt < AInt)
     {
         int cTemp = AInt;
         AInt = BInt;
