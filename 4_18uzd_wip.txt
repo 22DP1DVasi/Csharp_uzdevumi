@@ -1,0 +1,73 @@
+using System;
+class HelloWorld {
+  static bool checkProperInt (string valueToCheck)    // method to check if variable is convertable to int 
+    { 
+        int correctValue; 
+        if (int.TryParse(valueToCheck, out correctValue) == false) //if it is impossible to convert input to int 
+        { 
+            return false; 
+        }
+        return true; 
+    }
+    
+    
+  static void Main() {
+    Console.WriteLine("Enter multidimensional array first length.");
+    string len1 = Console.ReadLine();
+    
+    while (checkProperInt(len1) == false) 
+        { 
+            Console.WriteLine("You entered the value incorrectly! Try again."); 
+            Console.WriteLine("Enter multidimensional array first length."); 
+            len1 = Console.ReadLine(); 
+        }
+    int len1Int = Convert.ToInt32(len1);
+    Console.WriteLine("");
+    
+    Console.WriteLine("Enter multidimensional array second length.");
+    string len2 = Console.ReadLine();
+    
+    while (checkProperInt(len2) == false) 
+        { 
+            Console.WriteLine("You entered the value incorrectly! Try again."); 
+            Console.WriteLine("Enter multidimensional array second length."); 
+            len2 = Console.ReadLine(); 
+        }
+    int len2Int = Convert.ToInt32(len2);
+    Console.WriteLine("");
+    
+    int[,] multidimArray = new int[len1Int, len2Int];
+    Random rnd = new Random();
+    
+    Console.WriteLine("Original multidimensional array:");
+    for (int i = 0; i < len1Int; i++)
+    {
+        for (int j = 0; j < len2Int; j++)
+        {
+            multidimArray[i, j] = rnd.Next(0, 11);
+            Console.Write($"{multidimArray[i, j]} ");
+        }
+        Console.WriteLine("");
+    }
+    Console.WriteLine($"\n");
+    
+    // kolonna, kurā nav nulles
+    Console.WriteLine("No. of columns that don\'t containt zero:");
+    bool doesColumnContaintZero = false;
+    for (int kolonna = 0; kolonna < len2Int; kolonna++)
+    {
+        for (int rinda = 0; rinda < len1Int; rinda++)
+        {
+            if (multidimArray[rinda, kolonna] == 0)
+            {
+                doesColumnContaintZero = true;
+            }
+        }
+        if (doesColumnContaintZero == false)
+        {
+            Console.WriteLine(kolonna);
+        }
+        doesColumnContaintZero = false;
+    }
+  }
+}
