@@ -10,6 +10,15 @@ class HelloWorld {
         return true; 
     }
     
+  static int sumOfRowElements (int[,] mArray, int row)
+  {
+      int sumOfElements = 0;
+      for (int el = 0; el < mArray.GetLength(0); el++)
+      {
+          sumOfElements += mArray[row, el];
+      }
+      return sumOfElements;
+  }
     
   static void Main() {
     Console.WriteLine("Enter multidimensional array first length.");
@@ -49,9 +58,9 @@ class HelloWorld {
         }
         Console.WriteLine("");
     }
-    Console.WriteLine($"\n");
+    Console.WriteLine("");
     
-    // kolonna, kurā nav nulles
+    // kolonnas, kurās nav nulles
     Console.WriteLine("No. of columns that don\'t containt zero:");
     bool doesColumnContaintZero = false;
     for (int kolonna = 0; kolonna < len2Int; kolonna++)
@@ -69,5 +78,23 @@ class HelloWorld {
         }
         doesColumnContaintZero = false;
     }
+    Console.WriteLine("");
+    
+    // rinda ar maksimālo elementu summu
+    Console.WriteLine("No. of the row with max elemnts sum:");
+    int rowIndex = 0;
+    for (int r = 0; r < len1Int - 1; r++)
+    {
+        if (sumOfRowElements(multidimArray, r) < sumOfRowElements(multidimArray, r + 1))
+        {
+            rowIndex = r + 1;
+        }
+        else
+        {
+            rowIndex = r;
+        }
+    }
+    Console.WriteLine(rowIndex);
+    
   }
 }
