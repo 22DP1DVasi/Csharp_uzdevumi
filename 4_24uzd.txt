@@ -1,0 +1,45 @@
+using System;
+class HelloWorld {
+    
+  static bool checkProperInt (string valueToCheck)    // method to check if variable is convertable to int 
+    { 
+        int correctValue; 
+        if (int.TryParse(valueToCheck, out correctValue) == false) //if it is impossible to convert input to int 
+        { 
+            return false; 
+        }
+        else if (Convert.ToInt32(valueToCheck) < 0)
+        {
+            return false;
+        }
+        return true; 
+    }
+    
+  static void Main() {
+    Console.WriteLine("Input the number of elements to be stored in the array: ");
+    string elNumber = Console.ReadLine();
+    
+    while (checkProperInt(elNumber) == false) 
+        { 
+            Console.WriteLine("You input the value incorrectly! Try again."); 
+            Console.WriteLine("Input the number of elements to be stored in the array: "); 
+            elNumber = Console.ReadLine(); 
+        }
+    int elNumberInt = Convert.ToInt32(elNumber);
+    Console.WriteLine("");
+    
+    int[] array = new int[elNumberInt];
+    Console.WriteLine($"Input {elNumberInt} elements in the array:");
+    int el = 0;
+    int sumOfEl = 0;
+    for (int i = 0; i < elNumberInt; i++)
+    {
+        Console.Write($"element - {i}: ");
+        el = Convert.ToInt32(Console.ReadLine());
+        array[i] = el;
+        sumOfEl += array[i];
+    }
+    Console.WriteLine("");
+    Console.WriteLine($"Sum of all elements stored in the array is: {sumOfEl}");
+  }
+}
