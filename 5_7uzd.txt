@@ -1,0 +1,16 @@
+using System;
+class HelloWorld {
+  static void Main() {
+    Console.WriteLine("Input your password:");
+    string password = Console.ReadLine();
+    
+    int passwordLength = password.Length;
+    int passwordCheck = -1;
+    if (password.Contains("!"))
+    {
+        passwordCheck = 1;
+    }
+    
+    Console.WriteLine($"The user password is {password}. Its length is {passwordLength} and it receives a {passwordCheck} check.");
+  }
+}

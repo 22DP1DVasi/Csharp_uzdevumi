@@ -1,0 +1,20 @@
+using System;
+class HelloWorld {
+  static void Main() {
+      Console.WriteLine("Input text: ");
+      string text = Console.ReadLine();
+      Console.WriteLine("");
+      
+      string[] textSplit = text.Split();
+      foreach (string el in textSplit)
+      {
+          if (el.StartsWith("a"))
+          {
+              Console.WriteLine(el);
+          }
+      }
+  }
+}
+
+// string methods
+// https://www.programiz.com/csharp-programming/string
