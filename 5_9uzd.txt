@@ -1,0 +1,19 @@
+using System;
+class HelloWorld {
+  static void Main() {
+    string script = "Close on a portrait of the HANDSOME PRINCE -- as the BEAST'S giant paw slashes it.";
+    
+    string CLOSEON = script.Substring(script.IndexOf("Close"), 8);
+    CLOSEON = CLOSEON.ToUpper();
+    
+    
+    string handsomePrince = script.Substring(script.IndexOf("HANDSOME"), 15);
+    handsomePrince = handsomePrince.ToLower();
+    
+    string beasts = script.Substring(script.IndexOf("BEAST"), 7);
+    beasts = beasts.ToLower();
+    
+    string newScript = CLOSEON + " " + script.Substring(script.IndexOf("a"), 18) + handsomePrince + " " + script.Substring(script.IndexOf("--"), 10) + beasts + " " + script.Substring(script.IndexOf("giant"), 21);
+    Console.WriteLine(newScript);
+  }
+}

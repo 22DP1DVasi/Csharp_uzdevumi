@@ -1,0 +1,33 @@
+using System;
+class HelloWorld {
+  static void Main() {
+    Console.WriteLine("Input any text:");
+    string text = Console.ReadLine();
+    int punctMarksSum = 0;
+    string listOfPunctuationMarks = ".,!?;:\'\"";
+    
+    // 1 method
+    char[] textCharArray = text.ToCharArray();
+    foreach (char el in textCharArray)
+    {
+        if (listOfPunctuationMarks.Contains(el))
+        {
+            punctMarksSum++;
+        }
+    }
+    
+    Console.WriteLine($"Number of punctuation marks using the first method: {punctMarksSum}");
+    punctMarksSum = 0;
+    
+    // 2 method
+    foreach (char elem in text)
+    {
+        if (listOfPunctuationMarks.Contains(elem))
+        {
+            punctMarksSum++;
+        }
+    }
+    
+    Console.WriteLine($"Number of punctuation marks using the second method: {punctMarksSum}");
+  }
+}
