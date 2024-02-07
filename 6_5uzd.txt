@@ -1,0 +1,24 @@
+using System;
+class HelloWorld {
+    
+  static string NamePets(string pet1, string pet2)
+  {
+      return "Your pets " + pet1 + " and " + pet2 + " will be joining your voyage across space!";
+  }
+  
+  static string NamePets(string pet1, string pet2, string pet3)
+  {
+      return "Your pets " + pet1 + ", " + pet2 + " and " + pet3 + " will be joining your voyage across space!";
+  }
+  
+  static string NamePets()
+  {
+      return "Aw, you have no spacefaring pets :(";
+  }
+    
+  static void Main() {
+    Console.WriteLine(NamePets("Laika", "Laima"));
+    Console.WriteLine(NamePets("Mango", "Puddy", "Bucket"));
+    Console.WriteLine(NamePets());
+  }
+}
