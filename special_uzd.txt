@@ -1,23 +1,28 @@
 using System;
-class HelloWorld {
-    
-  static void addRandomElToArray(int[] array, int ind)
+class ChartTable {
+  
+  string name;
+  int rezult;
+  
+  public ChartTable(string Name, int Rezult)
+  {
+      name = Name;
+      rezult = Rezult;
+  }
+      
+  static void addNewPlayer(ChartTable[] array, string name, int ind)
   {
     Random rnd = new Random();
-    array[ind] = rnd.Next(100);
+    ChartTable pl = new ChartTable("name", rnd.Next(101));
+    array[ind] = pl;
   }
     
   static void Main() {
-    readonly string[] surnames = new string[7] {"Armstrong", "Hawkins", "Raev", "Carter", "Decker", "Cerruli", "Biesler"};
-    
     // a)
-    int[] rezults = new int[7];
-    for (int i = 0; i < rezults.Length; i++)
-    {
-        addRandomElToArray(rezults, i);
-        Console.WriteLine(rezults[i]);
-    }
+    ChartTable[] players = new ChartTable[7];
     
+    addNewPlayer(players, "Armstrong", 0);
+    Console.WriteLine($"{players[0]}");
     
   }
 }
