@@ -1,0 +1,46 @@
+using System;
+class HelloWorld {
+    
+  static bool checkProperInt (string valueToCheck)    // method to check if variable is convertable to int 
+    { 
+        int correctValue; 
+        if (int.TryParse(valueToCheck, out correctValue) == false) //if it is impossible to convert input to int 
+        { 
+            return false; 
+        }
+        return true; 
+    }
+    
+  static string ConvertToBinary(int num, string result)
+  {
+      if (num / 2 != 0)
+      {
+          string remainder = Convert.ToString(num % 2);
+          result += remainder;
+          num /= 2;
+          return ConvertToBinary(num, result);
+      }
+      else
+      {
+          char[] charArray = result.ToCharArray();
+          Array.Reverse(charArray);
+          return new string(charArray);
+      }
+  }
+    
+  static void Main(string[] args) {
+    Console.WriteLine("Input an integer: ");
+    string n = Console.ReadLine();
+    
+     while (checkProperInt(n) == false) 
+        { 
+            Console.WriteLine("You entered the value incorrectly! Try again."); 
+            Console.WriteLine("Input an integer: "); 
+            n = Console.ReadLine(); 
+        }
+    int number = Convert.ToInt32(n);
+    Console.WriteLine("");
+    
+    Console.WriteLine(ConvertToBinary(number, ""));
+  }
+}

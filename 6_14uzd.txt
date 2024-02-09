@@ -1,0 +1,34 @@
+using System;
+class HelloWorld {
+    
+  static bool AreStringsSame(string txt1, string txt2, int id)
+  {
+      if (txt1.Length != txt2.Length)
+      {
+          return false;
+      }
+      
+      if (id <= txt1.Length - 1)
+      {
+          if (txt1[id] != txt2[id])
+          {
+              return false;
+          }
+          return AreStringsSame(txt1, txt2, id + 1);
+      }
+      else
+      {
+          return true;
+      }
+      
+  }
+    
+  static void Main(string[] args) {
+    Console.WriteLine("Input first text:");
+    string text1 = Console.ReadLine();
+    Console.WriteLine("Input second text:");
+    string text2 = Console.ReadLine();
+    
+    Console.WriteLine(AreStringsSame(text1, text2, 0));
+  }
+}
